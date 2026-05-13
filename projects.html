@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lilo Virtual Assist | Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo"><span>lilo</span><small>Virtual Assist</small></a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="contact.html" class="nav-contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title section-shell">
+      <h1>Projects / Sample Works</h1>
+    </section>
+
+    <section class="project-filter section-shell" aria-label="Project categories">
+      <button class="filter-btn active" type="button" data-filter="all">All</button>
+      <button class="filter-btn" type="button" data-filter="system">Systems</button>
+      <button class="filter-btn" type="button" data-filter="design">Graphics</button>
+      <button class="filter-btn" type="button" data-filter="uiux">UI/UX</button>
+      <button class="filter-btn" type="button" data-filter="school">School Projects</button>
+    </section>
+
+    <section class="projects-grid section-shell">
+      <article class="project-card project-carousel" data-category="system">
+        <div class="carousel" aria-label="Project 1 system screenshots">
+          <img class="carousel-slide active" src="images/projects/project1_System/dashboard.png" alt="Project 1 system dashboard">
+          <img class="carousel-slide" src="images/projects/project1_System/homepage.png" alt="Project 1 system homepage">
+          <img class="carousel-slide" src="images/projects/project1_System/OTP.png" alt="Project 1 system OTP screen">
+          <img class="carousel-slide" src="images/projects/project1_System/signin.png" alt="Project 1 system sign in screen">
+          <button class="carousel-btn prev" type="button" aria-label="Previous project 1 image">&#8249;</button>
+          <button class="carousel-btn next" type="button" aria-label="Next project 1 image">&#8250;</button>
+        </div>
+        <div class="project-card-body">
+          <h2>Project 1: Report System</h2>
+          <p>A functional system interface with dashboard, sign-in, and OTP screens for organized digital reporting.</p>
+          <span>System Development</span>
+        </div>
+      </article>
+
+      <article class="project-card project-carousel" data-category="design">
+        <div class="carousel" aria-label="Project 2 graphic design samples">
+          <img class="carousel-slide active" src="images/projects/project2_graphics/classic Italian.png" alt="Classic Italian graphic design sample">
+          <button class="carousel-btn prev" type="button" aria-label="Previous project 2 image">&#8249;</button>
+          <button class="carousel-btn next" type="button" aria-label="Next project 2 image">&#8250;</button>
+        </div>
+        <div class="project-card-body">
+          <h2>Project 2: Graphic Design</h2>
+          <p>A clean visual design sample focused on layout, food branding, and polished promotional presentation.</p>
+          <span>Graphic Design</span>
+        </div>
+      </article>
+
+      <article class="project-card project-carousel" data-category="uiux">
+        <div class="carousel" aria-label="Project 3 wireframe screens">
+          <img class="carousel-slide active" src="images/projects/project3_wireframe/1.png" alt="Wireframe screen 1">
+          <img class="carousel-slide" src="images/projects/project3_wireframe/2.png" alt="Wireframe screen 2">
+          <img class="carousel-slide" src="images/projects/project3_wireframe/3.png" alt="Wireframe screen 3">
+          <img class="carousel-slide" src="images/projects/project3_wireframe/4.png" alt="Wireframe screen 4">
+          <img class="carousel-slide" src="images/projects/project3_wireframe/5.png" alt="Wireframe screen 5">
+          <img class="carousel-slide" src="images/projects/project3_wireframe/6.png" alt="Wireframe screen 6">
+          <img class="carousel-slide" src="images/projects/project3_wireframe/7.png" alt="Wireframe screen 7">
+          <img class="carousel-slide" src="images/projects/project3_wireframe/8.png" alt="Wireframe screen 8">
+          <img class="carousel-slide" src="images/projects/project3_wireframe/9.png" alt="Wireframe screen 9">
+          <img class="carousel-slide" src="images/projects/project3_wireframe/10.png" alt="Wireframe screen 10">
+          <button class="carousel-btn prev" type="button" aria-label="Previous wireframe image">&#8249;</button>
+          <button class="carousel-btn next" type="button" aria-label="Next wireframe image">&#8250;</button>
+        </div>
+        <div class="project-card-body">
+          <h2>Project 3: Wireframes</h2>
+          <p>Structured screen planning for user flows, layout hierarchy, and early interface decision-making.</p>
+          <span>UI/UX Planning</span>
+        </div>
+      </article>
+
+      <article class="project-card project-carousel" data-category="uiux">
+        <div class="carousel" aria-label="Project 4 prototype screens">
+          <img class="carousel-slide active" src="images/projects/Project4_prototype/image1.png" alt="Prototype screen 1">
+          <img class="carousel-slide" src="images/projects/Project4_prototype/image2.png" alt="Prototype screen 2">
+          <img class="carousel-slide" src="images/projects/Project4_prototype/image3.png" alt="Prototype screen 3">
+          <img class="carousel-slide" src="images/projects/Project4_prototype/image4.png" alt="Prototype screen 4">
+          <img class="carousel-slide" src="images/projects/Project4_prototype/image5.png" alt="Prototype screen 5">
+          <img class="carousel-slide" src="images/projects/Project4_prototype/image6.png" alt="Prototype screen 6">
+          <img class="carousel-slide" src="images/projects/Project4_prototype/image7.png" alt="Prototype screen 7">
+          <img class="carousel-slide" src="images/projects/Project4_prototype/image8.png" alt="Prototype screen 8">
+          <button class="carousel-btn prev" type="button" aria-label="Previous prototype image">&#8249;</button>
+          <button class="carousel-btn next" type="button" aria-label="Next prototype image">&#8250;</button>
+        </div>
+        <div class="project-card-body">
+          <h2>Project 4: Interactive Prototype</h2>
+          <p>High-fidelity prototype screens showing visual direction, flow, and app experience before development.</p>
+          <span>Prototype Design</span>
+        </div>
+      </article>
+
+      <article class="project-card project-carousel" data-category="school">
+        <div class="carousel" aria-label="Project 5 school system projects">
+          <img class="carousel-slide active" src="images/projects/project5_system_school_project/animal_database_management_system.png" alt="Animal database management system">
+          <img class="carousel-slide" src="images/projects/project5_system_school_project/calculator.png" alt="Calculator app">
+          <img class="carousel-slide" src="images/projects/project5_system_school_project/laundry_management_system.png" alt="Laundry management system">
+          <img class="carousel-slide" src="images/projects/project5_system_school_project/pokeAPI.png" alt="PokeAPI project">
+          <img class="carousel-slide" src="images/projects/project5_system_school_project/stopwatch.png" alt="Stopwatch app">
+          <button class="carousel-btn prev" type="button" aria-label="Previous school project image">&#8249;</button>
+          <button class="carousel-btn next" type="button" aria-label="Next school project image">&#8250;</button>
+        </div>
+        <div class="project-card-body">
+          <h2>Project 5: School Project: Systems & Apps</h2>
+          <p>A collection of practice systems and utility apps covering databases, API use, calculators, and timers.</p>
+          <span>School Projects</span>
+        </div>
+      </article>
+    </section>
+
+    <div class="center-action">
+      <a href="contact.html" class="btn btn-primary">Lets Build More Projects</a>
+    </div>
+  </main>
+
+  <div class="certificate-modal project-modal" id="projectModal" hidden>
+    <div class="certificate-modal-content project-modal-content" role="dialog" aria-modal="true" aria-label="Project preview">
+      <button class="certificate-modal-close project-modal-close" type="button" aria-label="Close project preview">x</button>
+      <button class="modal-carousel-btn modal-prev" type="button" aria-label="Previous project image">&#8249;</button>
+      <img src="" alt="">
+      <button class="modal-carousel-btn modal-next" type="button" aria-label="Next project image">&#8250;</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

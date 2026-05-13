@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lilo Virtual Assist | Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo"><span>lilo</span><small>Virtual Assist</small></a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="contact.html" class="nav-contact active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title section-shell">
+      <h1>Get in Touch</h1>
+      <p>Have a question or want to work together?<br>I'd love to hear from you!</p>
+    </section>
+
+    <section class="contact-layout section-shell">
+      <div class="contact-info">
+        <article><span class="icon">✉</span><div><h2>Email</h2><p>magnolerma07@gmail.com</p></div></article>
+        <!-- <article><span class="icon">☏</span><div><h2>Phone</h2><p>+63 912 345 6789</p></div></article> -->
+        <article><span class="icon">⌖</span><div><h2>Location</h2><p>Philippines</p></div></article>
+        <article><span class="icon">◎</span><div><h2>Connect</h2><p class="socials">
+          <a href="https://web.facebook.com/profile.php?id=61566629198954" aria-label="Facebook">f</a>
+          <a href="https://www.linkedin.com/in/lerma-magno/" aria-label="LinkedIn">in</a>
+          <a href="https://www.instagram.com/lilovirtualassist/" aria-label="Instagram">◎</a></p></div></article>
+      </div>
+
+      <form class="contact-form" action="https://formsubmit.co/ajax/magnolerma07@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New message from Lilo Virtual Assist portfolio">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" autocomplete="off" tabindex="-1" hidden>
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </section>
+
+    <section class="footer-band">
+      <span class="icon">◇</span>
+      <p>Let's work together and achieve great things!</p>
+    </section>
+  </main>
+
+  <div class="contact-success-modal" id="contactSuccessModal" hidden>
+    <div class="contact-success-card" role="status" aria-live="polite">
+      <span class="icon">OK</span>
+      <h2>Request Submitted</h2>
+      <p>Thank you for reaching out. Redirecting you to the home page...</p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
