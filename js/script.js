@@ -161,41 +161,43 @@ if (projectModal) {
   });
 }
 
-
-// =========================================================
-// CONTACT FORM (NETLIFY FORMS)
-// IMPORTANT: Remove your old JavaScript submit handler.
-// Netlify handles the form automatically.
-// =========================================================
-// =========================================================
-// CONTACT FORM (FORMSUBMIT -> DIRECT TO GMAIL)
-// =========================================================
 const contactForm = document.querySelector(".contact-form");
 const contactSuccessModal = document.querySelector("#contactSuccessModal");
 
-if (contactForm) {
+if (contactForm && contactSuccessModal) {
   const submitButton = contactForm.querySelector('button[type="submit"]');
 
-  // Show loading state before browser submits the form
-  contactForm.addEventListener("submit", () => {
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const originalButtonText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      const result = await response.json();
+
+      if (!response.ok || result.success === "false") {
+        throw new Error(result.message || "Form submission failed.");
+      }
+
+      contactForm.reset();
+      contactSuccessModal.hidden = false;
+
+      window.setTimeout(() => {
+        window.location.href = "index.html";
+      }, 2200);
+    } catch (error) {
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+      alert("Sorry, your message could not be sent right now. Please email magnolerma07@gmail.com directly.");
     }
   });
-
-  // Show success modal when redirected back with ?success=true
-  const params = new URLSearchParams(window.location.search);
-
-  if (params.get("success") === "true" && contactSuccessModal) {
-    contactSuccessModal.hidden = false;
-
-    // Remove success parameter from URL
-    window.history.replaceState({}, document.title, window.location.pathname);
-
-    // Redirect to home page after 2.2 seconds
-    setTimeout(() => {
-      window.location.href = "index.html";
-    }, 2200);
-  }
 }
