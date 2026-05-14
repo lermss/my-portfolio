@@ -97,55 +97,52 @@
       </div>
 
       <!-- Netlify Contact Form -->
-      <form
-        class="contact-form"
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        action="/thank-you.html">
+ <form
+  class="contact-form"
+  action="https://formsubmit.co/magnolerma07@gmail.com"
+  method="POST">
 
-        <!-- Required hidden input for Netlify -->
-        <input type="hidden" name="form-name" value="contact">
+  <!-- Email settings -->
+  <input type="hidden" name="_subject" value="New Message from Lilo Virtual Assist">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
 
-        <!-- Anti-spam field -->
-        <p hidden>
-          <label>
-            Don’t fill this out:
-            <input name="bot-field">
-          </label>
-        </p>
+  <!-- Redirect back to contact page after submit -->
+  <input type="hidden" name="_next" value="https://YOUR-NETLIFY-SITE.netlify.app/contact.html?success=true">
 
-        <div class="form-row">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required>
+  <!-- Anti-spam -->
+  <input type="text" name="_honey" style="display:none">
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            required>
-        </div>
+  <div class="form-row">
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      required>
 
-        <input
-          type="text"
-          name="subject"
-          placeholder="Subject"
-          required>
+    <input
+      type="email"
+      name="email"
+      placeholder="Email Address"
+      required>
+  </div>
 
-        <textarea
-          name="message"
-          rows="7"
-          placeholder="Your Message"
-          required></textarea>
+  <input
+    type="text"
+    name="subject"
+    placeholder="Subject"
+    required>
 
-        <button type="submit" class="btn btn-primary">
-          Send Message
-        </button>
-      </form>
+  <textarea
+    name="message"
+    rows="7"
+    placeholder="Your Message"
+    required></textarea>
+
+  <button type="submit" class="btn btn-primary">
+    Send Message
+  </button>
+</form>
     </section>
 
     <!-- Footer Band -->
