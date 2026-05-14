@@ -167,24 +167,35 @@ if (projectModal) {
 // IMPORTANT: Remove your old JavaScript submit handler.
 // Netlify handles the form automatically.
 // =========================================================
+// =========================================================
+// CONTACT FORM (FORMSUBMIT -> DIRECT TO GMAIL)
+// =========================================================
 const contactForm = document.querySelector(".contact-form");
-const contactSuccessModal = document.querySelector(
-  "#contactSuccessModal"
-);
+const contactSuccessModal = document.querySelector("#contactSuccessModal");
 
-if (contactForm && contactSuccessModal) {
+if (contactForm) {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+
+  // Show loading state before browser submits the form
   contactForm.addEventListener("submit", () => {
-    // Optional: show loading state before browser submits form
-    const submitButton = contactForm.querySelector(
-      'button[type="submit"]'
-    );
-
     if (submitButton) {
       submitButton.disabled = true;
       submitButton.textContent = "Sending...";
     }
-
-    // DO NOT call event.preventDefault()
-    // DO NOT use fetch()
-    // Netlify will process the form automatically.
   });
+
+  // Show success modal when redirected back with ?success=true
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get("success") === "true" && contactSuccessModal) {
+    contactSuccessModal.hidden = false;
+
+    // Remove success parameter from URL
+    window.history.replaceState({}, document.title, window.location.pathname);
+
+    // Redirect to home page after 2.2 seconds
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 2200);
+  }
+}
