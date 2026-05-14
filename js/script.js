@@ -161,43 +161,30 @@ if (projectModal) {
   });
 }
 
+
+// =========================================================
+// CONTACT FORM (NETLIFY FORMS)
+// IMPORTANT: Remove your old JavaScript submit handler.
+// Netlify handles the form automatically.
+// =========================================================
 const contactForm = document.querySelector(".contact-form");
-const contactSuccessModal = document.querySelector("#contactSuccessModal");
+const contactSuccessModal = document.querySelector(
+  "#contactSuccessModal"
+);
 
 if (contactForm && contactSuccessModal) {
-  const submitButton = contactForm.querySelector('button[type="submit"]');
+  contactForm.addEventListener("submit", () => {
+    // Optional: show loading state before browser submits form
+    const submitButton = contactForm.querySelector(
+      'button[type="submit"]'
+    );
 
-  contactForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const originalButtonText = submitButton.textContent;
-    submitButton.disabled = true;
-    submitButton.textContent = "Sending...";
-
-    try {
-      const response = await fetch(contactForm.action, {
-        method: "POST",
-        body: new FormData(contactForm),
-        headers: {
-          Accept: "application/json",
-        },
-      });
-      const result = await response.json();
-
-      if (!response.ok || result.success === "false") {
-        throw new Error(result.message || "Form submission failed.");
-      }
-
-      contactForm.reset();
-      contactSuccessModal.hidden = false;
-
-      window.setTimeout(() => {
-        window.location.href = "index.html";
-      }, 2200);
-    } catch (error) {
-      submitButton.disabled = false;
-      submitButton.textContent = originalButtonText;
-      alert("Sorry, your message could not be sent right now. Please email magnolerma07@gmail.com directly.");
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
     }
+
+    // DO NOT call event.preventDefault()
+    // DO NOT use fetch()
+    // Netlify will process the form automatically.
   });
-}
